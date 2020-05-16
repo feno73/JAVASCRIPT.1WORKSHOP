@@ -106,13 +106,6 @@
     <!--!!!!!!! NOTICIAS DINAMICAS !!!!!!!-->
     <section class="container">
         
-        <article class="row noticia">
-            <!-- Inicio noticia #1 -->
-
-            <!-- Fin noticia #1 -->
-
-
-        </article>
     </section>
 
     <!-- Optional JavaScript -->
@@ -122,14 +115,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="noticia.class.js"></script>
     <script>
-      /*
-      fetch("noticias.json").then( rta =>  rta.json() ) 
+    
+      fetch("https://api.npoint.io/13744b10b9cf55c10179").then( rta =>  rta.json() ) 
         .then(
           NuevaNoticia => NuevaNoticia.map(({titulo, autor, detalle, imagen}) => new Noticia (titulo, autor, detalle, imagen))
         )
-      */
-     const NuevaNoticia = new Noticia("Penal para boca", "Marcelo Palacios", "No es novedad", "img/tickets-rusia-mundial.jpg")
-     NuevaNoticia.Mostrar()
+        .then( noticias => {
+          if(noticias instanceof Array){
+            noticias.forEach( noticia => noticia.Mostrar() )
+          }else{
+            noticias.Mostrar()
+          }
+        })
+
     </script>
   </body>
 </html>

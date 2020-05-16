@@ -20,7 +20,7 @@ class Noticia{
                                 <p>${this.detalle}</p>
                             </div>`
 
-                            document.querySelector(".container").appendChild(ficha)
+        document.querySelector(".container").appendChild(ficha)
     }
 
 }
