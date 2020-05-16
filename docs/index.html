@@ -116,7 +116,7 @@
     <script src="noticia.class.js"></script>
     <script>
     
-      fetch("https://api.npoint.io/13744b10b9cf55c10179").then( rta =>  rta.json() ) 
+      fetch("noticias.json").then( rta =>  rta.json() ) 
         .then(
           NuevaNoticia => NuevaNoticia.map(({titulo, autor, detalle, imagen}) => new Noticia (titulo, autor, detalle, imagen))
         )
