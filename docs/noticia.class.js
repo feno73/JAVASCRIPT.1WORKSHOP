@@ -1,4 +1,4 @@
-class Noticias{
+class Noticia{
 
     constructor(t, a, d, i){
         this.titulo = t
@@ -8,8 +8,8 @@ class Noticias{
     }
 
     Mostrar(){
-        const ficha = doument.createElement("article")
-        ficha.classList.add("row noticia")
+        const ficha = document.createElement("article")
+        ficha.classList.add("row", "noticia")
         ficha.innerHTML =   `<div class="col-12 col-md-3 col-lg-4 noticia-img py-2">
                                 <img src=${this.imagen} class="img-fluid" alt="">
                              </div>
@@ -19,6 +19,8 @@ class Noticias{
                                 <p>por ${this.autor}</p>
                                 <p>${this.detalle}</p>
                             </div>`
+
+                            document.querySelector(".container").appendChild(ficha)
     }
 
 }
